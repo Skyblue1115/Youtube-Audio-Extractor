@@ -4,7 +4,8 @@
 .3 > made a prompt pop up when an error has occured to help debugging
 '''
 import yt_dlp,sys
-path = '/'.join(sys.argv[0].replace('\\','/').split('/')[:-1])
+from pathlib import Path
+path = str(Path(__file__).resolve().parent)
 
 def download_audio(url, output_path='downloads', ffmpeg_location=None):
     ydl_opts = {
